@@ -10,7 +10,6 @@ env:
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
-    continue-on-error: true
     strategy:
       matrix:
         toolchain:
@@ -25,7 +24,7 @@ jobs:
         
       - name: Install Tauri requirements # https://tauri.app/v1/guides/getting-started/prerequisites/#1-system-dependencies
         run: sudo apt-get update &&
-              sudo apt-get install libwebkit2gtk-4.0-dev \
+              sudo apt-get install -y libwebkit2gtk-4.0-dev \
               build-essential \
               curl \
               wget \
